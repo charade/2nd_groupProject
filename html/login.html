@@ -1,72 +1,49 @@
 <!DOCTYPE html>
 <html>
+    <head>
+        <link rel="stylesheet" href="../css/login.css">
 
-<head>
-    <link rel="stylesheet" href="../css/login.css">
-    
-</head>
-
-<body>
-    <header>
-        <h1>Simplon News</h1>
-        <h2>L'actu Simplon en temps réel..</h2>
-    </header>
-    <div id="container">
-
+    </head>
+    <body>
         <header>
-            <h3>L<img src="logo-simplon.png" alt="logo">GIN</h3>
+            <h1>Simplon News</h1>
+            <h2>L'actu Simplon en temps réel...</h2>
         </header>
+        <!-------------------------white card----------------------->
+        <div id="container">
 
-        <form>
-            <input type='text' required>
-            <label for="">Identifiant</label>
-
-            <input type='text' required>
-            <label for="">Mot de passe</label>
-
-            <input type='submit' value="Suivant">
-        </form>
-
-        <div>
-            <h4>S'inscrire</h4>
-
-            <form>
-                <input type='text' required>
-                <label for="">Nom</label>
-    
-                <input type='text' required>
-                <label for="">Prénom</label>
-
-                <input type='text' required>
+            <header>
+                <h3>L<img src="logo-simplon.png" alt="logo">GIN</h3>
+            </header>
+            <!-------------log in form-------------------------------------------->
+            <form id='loginForm'>
                 <label for="">Identifiant</label>
-    
                 <input type='text' required>
                 <label for="">Mot de passe</label>
-    
-                <input type='submit' value="Envoyer">
+                <input type='text' required>
+                <input type='submit' value="Suivant">
             </form>
-        
-        
+    <!-------------log in form after click-------------------------------------------->
+            <div>
+                <h4>S'inscrire ?</h4>
+                <form id='signUp'>
+                    <label for="ID">Nom</label>
+                    <input type='text' id='ID'required>
+                    <label for="password">Prénom</label>
+                    <input type='text' id='password'required>
+                    <label for="nom">Identifiant</label>
+                    <input type='text' id='nom'required>
+                    <label for="pass">Mot de passe</label>
+                    <input type='text' id='pass'required>   
+                    <input type='submit' value="Envoyer">
+                </form>
+            </div>
+
         </div>
-
-
-    </div>
-
-    
-
-
-
-    <footer>
-
-        <img src="" alt="">
-        <img src="" alt="">
-        <img src="" alt="">
-
-    </footer>
-
-
-
-
-</body>
-
+        <footer>
+            <img src="" alt="">
+            <img src="" alt="">
+            <img src="" alt="">
+        </footer>
+    </body>
 </html>

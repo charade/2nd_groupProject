@@ -14,31 +14,32 @@ html{
     font-family: "Open sans-serif";
     font-size: 62.5%;
     border: 3px solid black; 
-    
 }
-*{
-    margin: 0;
-    padding: 0;
-}
+
 body{
-    width: 80%;
     background-color: #7f0000;
     display:flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: space-between;
+    height : 100vh;
+    padding-left  : 7%;
 }
+
 body header{
-    border: 3px solid yellow;
+    
 }
+
 body header:last-child{
     border: 3px solid green;
 }
+
 h1{
     font-size: 5rem;
     font-family:'Montserrat', sans-serif;
     color:white;
     margin:0;
 }
+
 h2{
     font-family:'Big Shoulders Display', sans-serif;
     font-size:2rem;
@@ -47,19 +48,55 @@ h2{
     color:white;
     margin-top: 5px;
 }
+
 #container{
-    border-radius: 1rem;
+    border-radius: 1.5rem;
     background-color: white;
-    /* border-color: rgba(0, 0, 0, 0.2); */
-    border: 4px solid blue;
-    width: 30%;
+    
+    width: 50%;
+    box-shadow: 0 0 30px rgb(0, 0, 0);
+    /* border : thin solid white; */
+    overflow: hidden;
+    display:flex; 
+    flex-direction : column;
+    justify-content: space-between;
+    align-items : center;
+    
 }
-img{
-    background-size: cover;
-    color:#7f0000;
+
+#container header{
+    text-align : center;
 }
+
+/*logo simplon*/
+
+h3 img{
+    vertical-align : -.1cm;
+    width : 30px;
+}
+
 h3{
 
     font-family:'Noto Sans', sans-serif;
-    font-size: 2rem;
+    font-size: 3rem;
+}
+
+form{
+
+    display : flex;
+    flex-direction: column;
+}
+
+#loginForm input[type=submit]{
+    margin : 2%;
+}
+
+h4{
+    text-decoration: underline;
+}
+
+
+/*s'inscrire*/
+#signUp{
+    display:none;
 }
