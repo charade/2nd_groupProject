@@ -25,10 +25,6 @@ body{
     padding-left  : 7%;
 }
 
-body header{
-    
-}
-
 body header:last-child{
     border: 3px solid green;
 }
@@ -68,6 +64,56 @@ h2{
     text-align : center;
 }
 
+/* boutton */
+#loginForm div{
+    align-items: center;
+    width: 15vw;
+    display: flex;
+    justify-content: center;
+    margin-top: 2%;
+}
+/* essaie boutton 1  */
+
+/* input[type=submit]{
+    color: rgb(75, 73, 73) !important;
+    width:6vw;
+    box-shadow: rgba(225, 225, 225, 0.1);
+    text-decoration: none;
+    background: #ffffff;
+    padding: 2px;
+    border-radius: 1rem;
+    border: 0.5px solid rgb(75, 73, 73)!important;
+    display: inline-block;
+    transition: all 0.4s ease 0s;
+}
+input[type=submit]:hover{
+    color: #ffffff !important;
+    background: #cd0234;
+    border-color: #ffffff !important;
+    transition: all 0.4s ease 0s;
+} */
+
+/* essaie boutton 2 */
+
+input[type=submit]{
+    border: none;
+    background: #cd0234;
+    color: #ffffff !important;
+    padding: 6.5px;
+    border-radius: 12.5px;
+    display: inline-block;
+    transition: all 0.3s ease 0s;
+}
+input[type=submit]:hover{
+    color: #cd0234 !important;
+    font-weight: 700 !important;
+    letter-spacing: 3px;
+    background: none;
+    -webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+    -moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+    transition: all 0.3s ease 0s;
+}
+
 /*logo simplon*/
 
 h3 img{
@@ -100,3 +146,17 @@ h4{
 #signUp{
     display:none;
 }
+@media(max-width: 980px){
+    body{
+        flex-direction: column;
+    }
+    h1{
+        padding-top: 25vh;
+    }
+    #container{
+        margin-bottom: 10vh;
+    }
+}
+/* @media(max-width: 940px){
+    
+} */
