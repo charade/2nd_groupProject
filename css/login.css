@@ -1,4 +1,3 @@
-/********New on css *************************************/
 @font-face {
     font-family:'Noto_Sans';
     src:url("../asset/Noto_Sans/NotoSans-Bold.ttf")
@@ -11,10 +10,10 @@
     font-family:'Montserrat';
     src:url("../asset//Montserrat/Montserrat-Bold.ttf")
 }
+/*-----------------------------------------------------------------------------*/
 html{
     font-family: "Open sans-serif";
     font-size: 62.5%;
-    border: 3px solid black; 
 }
 
 body{
@@ -23,11 +22,8 @@ body{
     align-items: center;
     justify-content: space-between;
     height : 100vh;
-    padding-left  : 7%;
-}
-
-body header{
-    
+    padding-left  :5rem;
+    padding-right:3rem;
 }
 
 body header:last-child{
@@ -51,29 +47,70 @@ h2{
 }
 
 #container{
-    border-radius: 1.5rem;
-    background-color: white;
-    
-    width: 50%;
+    /* position : relative; sert à mettre les deux faces dos-dos */
+    border-radius: 1.5rem;  
+    height : 500px;
+    width: 600px;
     box-shadow: 0 0 30px rgb(0, 0, 0);
-    /* border : thin solid white; */
-    overflow: hidden;
-    display:flex; 
-    flex-direction : column;
-    justify-content: space-between;
-    align-items : center;
-    
+    transition: all .9s linear;  
+    position:relative;
 }
 
+/*************le container à été divisé en deux blocs pour avoir les deux face d'une carte************/
+.card{
+    width:100%;
+    height:100%;
+    /* transform-style:preserve-3d;effet 3D */
+    display:flex;
+    align-items:center;
+    flex-direction: column;
+    border-radius: 8px;
+    /***place sign-up dérrière login****/
+    position:absolute;
+    /* padding : 3% auto;  */
+}
+
+/****************JS flip the card******************/
+.flip{
+    transform: rotateY(180deg) rotateX(180deg) ;
+}
+/******************************************************/
+#face-login{
+    background-color: white;
+}
+
+#face-sign-up{
+    transform:rotateX(180deg) rotateY(180deg);
+    /* background-color: rgba(0, 0, 0, 0.849);couleur???*/
+}
+
+/************ JS to toggle between face-login and face-sign-up***********/
+.invisible{
+    display:none;
+}
+/*********************************************************************/
+form{
+    display : flex;
+    flex-direction: column;
+    align-items:center;
+    width:100%;
+    height:100%;
+}
+
+#face-login form{
+    height:58%;
+}
+#face-sign-up form{
+    height:80%;
+}
 #container header{
     text-align : center;
 }
 
 /*logo simplon*/
-
 h3 img{
     vertical-align : -.1cm;
-    width : 30px;
+    width : 3rem;
 }
 
 h3{
@@ -82,22 +119,91 @@ h3{
     font-size: 3rem;
 }
 
-form{
-
-    display : flex;
-    flex-direction: column;
+label{
+    transform : translateY(34px);
+    width:80%;
+    font-size : 1.7rem;
+    transition : all .5s ease;
 }
 
-#loginForm input[type=submit]{
-    margin : 2%;
+/***********JS label up while clicking on form input textr**********/
+.label-up{
+    transform:translateY(0);
+}
+
+#face-login label{
+    color : rgba(0, 0, 0, 0.603);
+    /* border-bottom : white; */
+}
+
+#face-sign-up label{
+    color:rgba(255, 255, 255, 0.781);
+}
+
+/*****input text******/
+.field{
+    border-top:none;
+    border-right:none;
+    border-left :none;
+    margin-bottom:5%;
+    padding-top:15px;
+    width:80%;
+    font-size:2rem;
+}
+
+#face-login .field{
+    color:black;
+    border-color:#7f0000;
+}
+/***retire les reflets*******/
+#face-sign-up .field{
+    /* box-shadow: 0 0 0 #7f0000; */
+    border-bottom-color:white;
+    background-color : inherit; 
+    color: white;
+    transition: all .8s linear;
+}
+/*******************************/
+
+
+
+/*****backArrow*********/
+#face-sign-up span{
+    width : 55px;
+    height:48px;
+    color:white;
+    border-radius: 50%;
+    background-color: black;
+    font-size:3.5rem;
+    font-weight: 900;
+    text-align: center;
+    display:block;
+    cursor:pointer;
 }
 
 h4{
+    font-size : 1.8rem;
     text-decoration: underline;
+    cursor:pointer;
 }
 
+/***************************Ombre en dessous de la carte*********************/
+#ombre{
+    position:absolute;
+    top : 90vh;
+    left:43vw;
+    width : 600px;
+    height:20px;
+    border-radius: 70%;
+    background-color:rgba(0, 0, 0, 0.603);
+    border:none;
+    /* transform:rotateY(60deg); */
+    box-shadow:0 20px 60px black;
+    transition : height .8s linear;
+    display:inline;
+}
 
-/*s'inscrire*/
-#signUp{
-    display:none;
+/*******class rajoutée à l'ombre dynamiquement pour le mouvement******/
+.mouvement--ombre{
+    max-height:0;
 }
