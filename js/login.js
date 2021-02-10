@@ -1,7 +1,7 @@
 /*************************Js for main login animation****** */
 /***************Animation carte login/sign up************************/
 let container  = document.querySelector('#container');
-let faceLogin  = document.querySelector("#face-login");
+let faceLogin  = document.querySelector("#face-login,header h3");
 let faceSignUp = document.querySelector('#face-sign-up');
 let ombre = document.querySelector('#ombre');
 /*********on veut faire transition sur les label correspondants au champ cliqué */
@@ -22,8 +22,10 @@ allLabels.forEach(label => label.addEventListener('click',ecrire));
 
 /*******juste pour éviter la répétition entre flip et flipback */
 function mkInvisible(){
+   
     faceLogin.classList.toggle('invisible');
     faceSignUp.classList.toggle('invisible');
+    
 }
 
 function flip(){
