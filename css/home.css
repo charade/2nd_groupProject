@@ -1,0 +1,130 @@
+html{
+    font-family: "Open sans-serif";
+    font-size: 62.5%;
+    border: 3px solid black; 
+}
+body{
+    background-color: white;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    height : 100vh;
+    flex-direction: column;
+    transition: all 2s ease;
+}
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+
+header{
+    display: flex;
+    /* border: 3px solid blue; */
+    flex-direction: row;
+    width: 100%;
+}
+
+/******* nav ***************************/
+
+nav {
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.438);
+}
+nav img {
+    height: 30px;
+    width: 30px;
+    object-fit: contain;
+}
+#favoris{
+    width: 40px;
+    height: 30px;
+    position: relative;
+    /* border: 3px solid yellow; */
+}
+#favoris img {
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    filter: drop-shadow(1px 1px 0 black) 
+    drop-shadow(-1px -1px 0 black);
+}
+#favoris img:first-child{
+    left: 13px;
+    top: 6px;
+    right: 15px;
+}
+#logo img:first-child{
+    filter: drop-shadow(1px 1px 0 black) 
+    drop-shadow(-1px -1px 0 black);
+}
+ul a{
+    text-decoration: none; 
+    color:rgba(255,255,255, 0.7);
+    font-family:'Opensans', sans-serif;
+    font-weight:300;
+    font-size: 1.5rem;
+   
+    padding-top: 10px;
+    padding-bottom: 5px;
+    text-underline-position: below;
+    transform: translateX(-100%);
+}
+ul a:hover{
+     color:white;
+    cursor: pointer;
+    height: 2px;
+   
+}
+/* ul a:hover:before {
+    transform: translateX(0);
+  } */
+ul li:last-child a {
+    color: #cd0234;
+}
+ul li:last-child a:hover{
+
+}
+ul {
+    list-style-type: none;/***img????**/
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/******* bouton mode: dark/light**********************************/
+.slider-canvas{
+    height : 30px;
+    width : 50px;
+    background-color:#7f0000;
+    margin :.8%;
+    border-radius: 15px;
+    position:relative;
+}
+.slider{
+    position:absolute;
+    left: 0;
+    border-radius:50%;
+    height:100%;
+    width:60%;
+    background-color:white;
+    transition: all .3s linear;
+}
+
+/************************JS***************************/
+  /******Le background du label qui contient le switch devient rouge***/
+  
+  .darkedTheme{
+      background-color : teal;
+      
+  }
+  .darkedTheme .slider-canvas{
+      background-color :white;
+     
+  }
+
+  /******si le label change alors le bouton bouge****/
+ .darkedTheme .slider{
+    left:50%;
+    background-color : black; 
+ }
