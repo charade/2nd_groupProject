@@ -70,11 +70,10 @@ ul.util-links{
 }
 
 .util-links li:last-child a {
-    color: rgba(255, 0, 0, 0.842);
+    color: #7f0000;
 }
 
 /******* nav ***************************/
-
 nav {
     padding :3px;
     width: 100vw;
@@ -85,6 +84,7 @@ nav {
     /*****for JS****/
     transition : .4s linea;
 }
+
 nav ul {
     padding:3%;
     list-style-type: none;/***img????**/
@@ -177,12 +177,35 @@ a::after{
     right:0;
     bottom:0;
 }
-
 /********effect on all a links*************/
  a:hover::before, a:hover::after {
     width :100%;
 }
-
+/******* Section of Articles*******/
+.main-container{
+    display : flex;
+    justify-content: space-between;
+    height : 300px;
+    width:97%;
+}
+/*****template contenant les articles*****/
+.main-container section{
+    width:30%;
+}
+/************ Put every template at the same dimensions*******************************/
+/* .first{
+   
+    
+}  */
+/******les titres des différentes catégories****/
+h2.first{
+    text-align: center;
+    background: #7f0000;
+    color : white;
+    padding-top : 3px;
+    border-radius : 9px;
+}
+/******chaque blocs Articles******/
 
 /****************************************************************/
 /************************JS*************************************/
@@ -192,25 +215,93 @@ a::after{
     position : fixed;
     height : 10vh;
 } */
-
-
 /*********************Switching Theme Mode Button*************************/
-  /****** added to body***/
-  .darkedTheme{
-      background-color : #00070D;
-      
+/****** added to body***/
+.darkedTheme{
+      background-color :#080B14 /* #00070D; #180638 bg color?????*/
   }
-
-  .darkedTheme nav{
+/******affect the Nav bar if body gets .darkedTheme****/
+.darkedTheme nav{
     box-shadow : 0 0 10px white;
   }
-  .darkedTheme .slider-canvas{
+/*******Affects the switch theme button canvas on changing theme****/
+.darkedTheme .slider-canvas{
       background-color :white;
-     
   }
-
-  /******si le label change alors le bouton bouge****/
- .darkedTheme .slider{
+/*******Affects the button itself on switching theme****/  
+.darkedTheme .slider{
     left:40%;
     background-color : black; 
  }
+/******Affect every catogory title on switching theme**/
+.darkedTheme .main-container h2{
+     box-shadow: 0 0 8px white;
+     color:white;
+     background-color: #1a313d;
+ }
+
+ /*************pop up window***************/
+ /******Add blur to the main content*************/
+.pop-up{
+      z-index:-1;
+      filter: blur(13px);
+}
+/****Styling the pop up window****/
+.pop-up-window{
+    z-index:2;
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform : translate(-50%,-45%);    
+    width: 50%;
+    height:55%;
+    opacity :.856;
+    background-color: rgb(136, 130, 117);
+    transition : all .9s ease;
+    border-radius:15px;
+    box-shadow: 0 0 19px rgb(176, 186, 240);
+    padding-top:0;
+}
+/****button that closes the pop up window****/
+.close{
+     z-index:1;
+     max-width : 40px;
+     margin-left : 89%;
+     margin-top : 2%;
+     opacity : .3;
+     display:block;
+}
+/****Put information into the article block ***/
+
+/*1-- every div of articles */
+    /**JS process : add a figure dynamicaly into "article-container class" **/
+.article{    /*---> <div> element */
+    /* width:100%; */
+    position :relative;
+    height:200px;
+    margin : 2%;
+    background-size : cover;
+    background-repeat : no-repeat;
+    background-position : center center;
+    background-image : url('../asset/test.jpg'); /*injecté dans le JS*/
+    padding-top : 20%;
+    border-radius: 10px;
+}
+
+/*2-- Article Title***/
+    /*JS process : <h3> element to add to the div article****/
+.article-title{ /* --> <h3> element*/
+    position:absolute;
+    top : 50%;
+    left : 50%;
+    transform : translate(-50%,-50%);
+    width:100%;
+    height : 100%;
+    font-size : 4rem;
+    text-align : center;
+    color: white;
+    padding-top : 22%;
+    box-shadow : 0 0 5px white;
+    background-color :rgba(0, 0, 0, 0.76);
+}
+
