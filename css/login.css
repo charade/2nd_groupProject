@@ -3,9 +3,7 @@
       I  /  HTML ELEMENT in descending order
       II /  USEFUL CLASSES FOR JS
       III/  TITLES STYLING SECTION    
-
 */
-
 @font-face {
     font-family:'Noto_Sans';
     src:url("../asset/Noto_Sans/NotoSans-Bold.ttf")
@@ -19,7 +17,7 @@
     src:url("../asset//Montserrat/Montserrat-Bold.ttf")
 }
 /*-----------------------------------------------------------------------------*/
-/****************************  I *********************************************/
+/****************************  I  *********************************************/
 html{
     font-family: "Open sans-serif";
     font-size: 62.5%;
@@ -39,8 +37,39 @@ body header:last-child{
     border: 3px solid green;
 }
 
-/******************Main container ====> header + fliping card*********************************/
+/*************** Error box ****************************************************/
+.error-box{
+    display : flex;
+    position:absolute;
+    top:3%;
+    left:0;
+    /* display : none; */
+    background-color: rgba(245, 245, 245, 0.952);
+    border-radius: 20px;
+    justify-content:space-around;
+    transition : .5s ease-out;
+    padding:1%;
+}
+/****error text***/
+#error-text{
+    font-size: 1.8rem;
+    overflow: hidden;
+    margin-right:2%;
+    text-align:center;
+    
+}
 
+/***** error-box warning image***/
+
+.error-box img{
+    max-width: 25px;
+    vertical-align: -.1cm;
+    padding:0;
+   
+}
+
+
+/******************Main container ====> header + fliping card*********************************/
 #container{
     /* position : relative; sert à mettre les deux faces dos-dos */
     border-radius: 1.5rem;  
@@ -89,12 +118,14 @@ h3 img{
 }
 
 label{
-    transform : translateY(34px);
+    
     width:80%;
     font-size : 1.7rem;
     transition : all .5s ease;
+    height : 90px;
+    transform : translateY(130%);
+    
 }
-
 /****la division s'inscrire(sign up) est inversée au début pour se remettre à l'endroit lors de la rotation***/
 #face-sign-up{
     transform:rotateX(180deg) rotateY(180deg);
@@ -115,44 +146,48 @@ form{
 }
 
 #face-sign-up form{
-    height:80%;
+    height:60%;
+    
 }
 
 #face-login label{
     color : rgba(0, 0, 0, 0.603);
+    
+    /* background-color: black; */
+   
+    
     /* border-bottom : white; */
 }
 
 #face-sign-up label{
-    color:rgba(255, 255, 255, 0.781);
+    color:white;
+    
+    
 }
-
 /*****************Corresponding to input text fields*****************/
 .field{
-    border-top:none;
-    border-right:none;
-    border-left :none;
-    margin-bottom:5%;
+    border-color:inherit;
+    
+    margin-bottom:7%;
     padding-top:15px;
     width:80%;
+    cursor:pointer;
     font-size:2rem;
 }
 
 #face-login .field{
     color:black;
     border-color:#7f0000;
+    /* border : 4px solid blue; */
 }
-
 
 #face-sign-up .field{
-    /* box-shadow: 0 0 0 #7f0000; */
     border-bottom-color:white;
     background-color : inherit; 
-    color: white;
+    color: rgba(0, 0, 0, 0.952);
     transition: all .8s linear;
+    margin-bottom:3%;
 }
-
-
 /*****backArrow to get back to the login face*********/
 #face-sign-up span{
     width : 60px;
@@ -164,10 +199,13 @@ form{
     font-size:4rem;
     font-weight: bolder;
     text-align: center;
-    /* display:block; */
     cursor:pointer;
     padding-top:-10px;
+    margin-bottom: 4%;
+    position:absolute;
+    top : 80%;
 }
+
 
 /******************div under the card for a shadow effect*********************/
 #ombre{
@@ -184,31 +222,29 @@ form{
     transition : height .8s linear;
     display:inline;
 }
-
 /**************************************************************************************/
-/************************    II   ****************************************************/
-
+/************************   II   ****************************************************/
+/***effect for the message-box appear or disappear****/
+.error-message{
+  max-width : 0;
+  overflow : hidden;
+}
 /****Class added to the container to flip it***********************/
 .flip{
     transform: rotateX(180deg) rotateY(180deg) ;
 }
-
 /************added to toggle between face-login and face-sign-up***********/
 .invisible{
     display:none;
 }
-
 /*********** label up while clicking on form input text **********/
 .label-up{
     transform:translateY(0);
 }
-
-
 /*******class added to shadow to move it while the container flipping******/
 .mouvement--ombre{
     max-height:0;
 }
-
 /****************************************************************************************************/
 /***************************    III   **********************************************/
 h1{
@@ -217,7 +253,6 @@ h1{
     color:white;
     margin:0;
 }
-
 h2{
     font-family:'Big Shoulders Display', sans-serif;
     font-size:2rem;
@@ -226,14 +261,12 @@ h2{
     color:white;
     margin-top: 5px;
 }
-
 h3{
     font-family:'Noto Sans', sans-serif;
     color:black;
     font-size: 3rem;
     margin:0;
 }
-
 h4{
     font-size : 1.8rem;
     text-decoration: underline;

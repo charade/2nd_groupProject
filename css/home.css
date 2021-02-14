@@ -46,7 +46,7 @@ body > header{
 }
 
 .media .icons img{
-    max-width : 20px;
+    max-width : 18px;
     margin : 3%;
 }
 
@@ -75,6 +75,8 @@ ul.util-links{
 
 /******* nav ***************************/
 nav {
+    position:relative;
+    top:0;
     padding :3px;
     width: 100vw;
     height : 14vh;
@@ -82,11 +84,11 @@ nav {
     background-color: #01010eec;
     box-shadow : 0 -2px 10px  black;
     /*****for JS****/
-    transition : .4s linea;
+    transition : .4s linear;
 }
 
 nav ul {
-    padding:3%;
+    padding:1%;
     list-style-type: none;/***img????**/
     display: flex;
     justify-content: space-between;
@@ -210,11 +212,13 @@ h2.first{
 /****************************************************************/
 /************************JS*************************************/
 
-/********sticky nav*****************/
-/* .stick-the-nav nav{
+/*******sticky nav*****************/
+.stick-the-nav nav{
     position : fixed;
     height : 10vh;
-} */
+    background: #131318ec;
+    box-shadow: 0 3px 5px inset whitesmoke;
+}
 /*********************Switching Theme Mode Button*************************/
 /****** added to body***/
 .darkedTheme{
@@ -246,62 +250,89 @@ h2.first{
       z-index:-1;
       filter: blur(13px);
 }
-/****Styling the pop up window****/
+/****Styling the pop up window*****************/
 .pop-up-window{
-    z-index:2;
+    /* z-index:2; */
     position:absolute;
     left:50%;
     top:50%;
     transform : translate(-50%,-45%);    
-    width: 50%;
-    height:55%;
+    width: 80%;
+    height:60%;
     opacity :.856;
-    background-color: rgb(136, 130, 117);
+    background-color: rgb(39, 38, 35);
     transition : all .9s ease;
     border-radius:15px;
-    box-shadow: 0 0 19px rgb(176, 186, 240);
+    box-shadow: 0 0 9px rgb(176, 186, 240);
     padding-top:0;
 }
+
 /****button that closes the pop up window****/
 .close{
      z-index:1;
      max-width : 40px;
-     margin-left : 89%;
+     margin-left : 90%;
      margin-top : 2%;
-     opacity : .3;
-     display:block;
+     opacity : .8;
+     background : rgba(255, 255, 255, 0.52);
+     border-radius:50%;
+     padding:0;
+     border : 3px solid rgb(13, 97, 13);
 }
+
+/**** article content in the pop up window;**/
+.content-container{ /*******peut être police particulière**/
+    font-size : 1.7rem;
+    color:white;
+}  
+
+.author-section-style{
+    font-size : 1.2rem;
+    margin-top : 90%;
+    margin-left:10%;
+    color:white;
+}
+
+/********* arcticle creatio syle section********/
 /****Put information into the article block ***/
 
 /*1-- every div of articles */
     /**JS process : add a figure dynamicaly into "article-container class" **/
-.article{    /*---> <div> element */
-    /* width:100%; */
-    position :relative;
+.wrapper{    /*---> <div> element */
     height:200px;
-    margin : 2%;
+    width : 100%;
+    margin-top : 1%;
+    margin-bottom:2%;
     background-size : cover;
     background-repeat : no-repeat;
     background-position : center center;
-    background-image : url('../asset/test.jpg'); /*injecté dans le JS*/
-    padding-top : 20%;
+    /* background-image : url('../asset/test.jpg'); injecté dans le JS */
     border-radius: 10px;
 }
-
+/****** Article title, resume, content, author wraper****/
+.content-wrapper{
+    width : 100%;
+    height : 100%;
+    background-color:rgba(0, 0, 0, 0.76);
+    border-radius: 10px;
+}
 /*2-- Article Title***/
     /*JS process : <h3> element to add to the div article****/
 .article-title{ /* --> <h3> element*/
-    position:absolute;
-    top : 50%;
-    left : 50%;
-    transform : translate(-50%,-50%);
-    width:100%;
-    height : 100%;
     font-size : 4rem;
     text-align : center;
     color: white;
-    padding-top : 22%;
-    box-shadow : 0 0 5px white;
-    background-color :rgba(0, 0, 0, 0.76);
+    margin-bottom:2%;
 }
+
+.resume{
+    color:white;
+    font-size: 1.7rem;
+}
+/* content and author are hidden in the card view**/
+/* .hidden{
+    display:none;
+} */
+
+
 
