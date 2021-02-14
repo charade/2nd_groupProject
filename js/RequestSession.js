@@ -102,17 +102,17 @@ class InstanciateArticles{
             let data = await reponse.json();
             if(reponse.status === 200)
             {
-                let dat = await data
-                console.log(dat)
-                createArticle(dat.article[0].titre, dat.article[0].resume, dat.article[0].contenu, dat.article[0].author, dat.article[0].image,this.id)
+                console.log(data.article[0])
+               
+                createArticle(data.article[0].titre, data.article[0].resume, data.article[0].contenu, data.article[0].author, data.article[0].image,this.id)
             }    
             else
             {
                 document.querySelector('#error-text').textContent = data.error;
-                
             }
         }
 }
+
 /******************************** */
 /******************************** */
 let forms = Array.from(document.querySelectorAll('form'));
@@ -123,18 +123,18 @@ let password = document.querySelector('#password');
 
 forms.forEach(form =>form.addEventListener('submit', (e) =>{
     e.preventDefault();
-    let randomCategoryID = (~~2*Math.random) + 1;
+     
     
     switch(forms.indexOf(form)){
         
         case 0: //case login
             console.log('submit')
-            new Login(email.value,password.value, randomCategoryID);
+            new Login(email.value,password.value, 1);
             break;
 
          case 1 : 
             console.log('signUp');
-            new SignUp(firstName.value, lastName.value, email.value, password.value, randomCategoryID)
+            new SignUp(firstName.value, lastName.value, email.value, password.value, 1)
             break;
         default : 
             return 'non ça passe pas!'    

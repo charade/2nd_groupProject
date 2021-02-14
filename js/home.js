@@ -1,16 +1,18 @@
 /*******************creating articles****************************/
-let category = Array.from(document.querySelectorAll('section'))
+let category = Array.from(document.querySelectorAll('section'));
+console.log(category);
 function createArticle(titre,synopsis,contenu,auteur,image,randomId){
+    console.log(category[randomId-1]);
     let wrapper  = document.createElement('div');
     wrapper.classList.add('wrapper');
     let content_wrapper = document.createElement('div');
-    let title = document.createElement('h3');
+    let title    = document.createElement('h3');
     let resume   = document.createElement('p');
     let content  = document.createElement('p');
     let author   = document.createElement('h4');
 
     content_wrapper.classList.add('content-wrapper');
-    title.classList.add('article-title')
+    title.classList.add('article-title');
     resume.classList.add('resume');
     content.classList.add('hidden');
     author.classList.add('hidden');
@@ -23,12 +25,11 @@ function createArticle(titre,synopsis,contenu,auteur,image,randomId){
     category[randomId-1].appendChild(wrapper);
     
     wrapper.backgroundImage = url(image);
-    title.textContent   = titre
-    resume.textContent  = synopsis
-    content.textContent = contenu
-    author.textContent  = auteur
+    title.textContent   = titre;
+    resume.textContent  = synopsis;
+    content.textContent = contenu;
+    author.textContent  = auteur;
 }
-
 // createArticle();
 
 /***********************************************/
@@ -59,7 +60,6 @@ function darkMode(){
 }
 /******************************************************/
 /********************* Pop up dynamic creation *******/
-
 /* 1 ************* Pop up window created *********************/
 
 //block juste en dessous de la nav Bar
@@ -91,7 +91,7 @@ function closePopUp(){
     mainContainer.classList.remove('pop-up');
 }
 
-let hj = new SignUp("jeronimo","plouf","3gem09Ekllmdc232ly90r1@gmail.com","1234")
+// let hj = new SignUp("jeronimo","plouf","3gem09Ekllmdc232ly90r1@gmail.com","1234")
 
 
 
