@@ -1,0 +1,266 @@
+/*            Guide
+           ----------
+      I  /  HTML ELEMENT in descending order
+      II /  USEFUL CLASSES FOR JS
+      III/  TITLES STYLING SECTION    
+*/
+@font-face {
+    font-family:'Noto_Sans';
+    src:url("../asset/Noto_Sans/NotoSans-Bold.ttf")
+}
+@font-face {
+    font-family:'Big Shoulders Display';
+    src:url("../asset/Big_Shoulders_Display/BigShouldersDisplay-Regular.ttf")
+}
+@font-face {
+    font-family:'Montserrat';
+    src:url("../asset//Montserrat/Montserrat-Bold.ttf")
+}
+/*-----------------------------------------------------------------------------*/
+/****************************  I  *********************************************/
+html{
+    font-family: "Open sans-serif";
+    font-size: 62.5%;
+}
+
+body{
+    background-color: #7f0000;
+    display:flex;
+    align-items: center;
+    justify-content: space-around;
+    height : 100vh;
+    padding-left  :4rem;
+    padding-right:3rem;
+}
+
+body header:last-child{
+    border: 3px solid green;
+}
+
+/*************** Error box ****************************************************/
+.error-box{
+    display : flex;
+    position:absolute;
+    top:3%;
+    left:0;
+    background-color: rgba(245, 245, 245, 0.952);
+    border-radius: 20px;
+    justify-content:space-around;
+    transform : translateX(-500px);
+    transition : .5s ease-out;
+    padding:1%;
+}
+/*error text**/
+#error-text{
+    font-size: 1.8rem;
+    overflow: hidden;
+    margin-right:2%;
+    text-align:center;
+}
+/** error-box warning image**/
+.error-box img{
+    max-width: 25px;
+    vertical-align: -.1cm;
+    padding:0;
+}
+
+/******************Main container ====> header + fliping card*********************************/
+#container{
+    /* position : relative; sert à mettre les deux faces dos-dos */
+    border-radius: 1.5rem;  
+    height : 480px;
+    width: 500px;
+    box-shadow: 0 0 30px rgb(0, 0, 0);
+    transition: all .9s linear;  
+    position:relative;
+    overflow:hidden;
+    margin-left:3%;
+}
+
+#container header{
+    text-align : center;
+    background-color: white;
+    height : 25%;
+}
+
+/*logo simplon ===> header */
+h3 img{
+    vertical-align : -.1cm;
+    width : 3rem;
+}
+
+/*************The container is divided in two block for having the two faces of our card************/
+.card{
+    width:100%;
+    height:100%;
+    /* transform-style:preserve-3d;effet 3D */
+    display:flex;
+    align-items:center;
+    flex-direction: column;
+    /***place sign-up dérrière login****/
+    position:absolute;
+}
+
+#face-login{
+    background-color: white;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+label{
+    width:80%;
+    font-size : 1.7rem;
+    transition : all .2s linear;
+    height : 90px;
+    transform : translateY(130%);
+}
+/****la division s'inscrire(sign up) est inversée au début pour se remettre à l'endroit lors de la rotation***/
+#face-sign-up{
+    transform:rotateX(180deg) rotateY(180deg);
+    background-color: #7f0000;
+    top:0;
+    border-radius:8px;
+}
+
+form{
+    display : flex;
+    flex-direction: column;
+    align-items:center;
+    width:100%;  
+}
+
+#face-login form{
+    height:50%;
+}
+
+#face-sign-up form{
+    height:60%;
+}
+
+#face-login label{
+    color : rgba(0, 0, 0, 0.603);
+}
+
+#face-sign-up label{
+    color:white;
+}
+/*****************Corresponding to input text fields*****************/
+/******entries fields*****/
+.field{
+    border-color:inherit;
+    
+    margin-bottom:7%;
+    padding-top:15px;
+    width:80%;
+    cursor:pointer;
+    font-size:2rem;
+}
+
+#face-login .field{
+    color:black;
+    border-color:#7f0000;
+}
+
+#face-sign-up .field{
+    border-bottom-color:white;
+    background-color : inherit; 
+    color: rgba(0, 0, 0, 0.952);
+    transition: all .8s linear;
+    margin-bottom:3%;
+}
+/*****backArrow to get back to the login face*********/
+#face-sign-up span{
+    width : 60px;
+    height:55px;
+    color:white;
+    border-radius: 50%;
+    background-color: black;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.404);
+    font-size:4rem;
+    font-weight: bolder;
+    text-align: center;
+    cursor:pointer;
+    padding-top:-10px;
+    margin-bottom: 4%;
+    position:absolute;
+    top : 80%;
+}
+/******************div under the card for a shadow effect*********************/
+#ombre{
+    position:absolute;
+    top : 92vh;
+    left: 44vw;
+    width : 500px;
+    height: 20px;
+    border-radius: 70%;
+    background-color:rgba(0, 0, 0, 0.603);
+    border:none;
+    /* transform:rotateY(60deg); */
+    box-shadow:0 20px 70px black;
+    transition : height .8s linear;
+    display:inline;
+}
+/**************************************************************************************/
+/************************   II   ****************************************************/
+
+/****make error-box appear the diseappear by removing it***/
+
+.show-error{
+    transform : translateX(100px);
+}
+
+/***effect for the message-box appear or disappear****/
+.error-message{
+  max-width : 0;
+  overflow : hidden;
+}
+
+/****Class added to the container to flip it***********************/
+.flip{
+    transform: rotateX(180deg) rotateY(180deg) ;
+}
+
+/************added to toggle between face-login and face-sign-up***********/
+.invisible{
+    display:none;
+}
+
+/*********** label up while clicking on form input text **********/
+.label-up{
+    transform:translateY(0);
+}
+
+/*******class added to shadow to move it while the container flipping******/
+.mouvement--ombre{
+    max-height:0;
+}
+
+/****************************************************************************************************/
+/***************************    III   **********************************************/
+h1{
+    font-size: 5rem;
+    font-family:'Montserrat', sans-serif;
+    color:white;
+    margin:0;
+}
+h2{
+    font-family:'Big Shoulders Display', sans-serif;
+    font-size:2rem;
+    letter-spacing: 2px;
+    text-align: center;
+    color:white;
+    margin-top: 5px;
+}
+h3{
+    font-family:'Noto Sans', sans-serif;
+    color:black;
+    font-size: 3rem;
+    margin:0;
+    padding-top: 51px;
+}
+h4{
+    font-size : 1.8rem;
+    text-decoration: underline;
+    cursor:pointer;
+}
