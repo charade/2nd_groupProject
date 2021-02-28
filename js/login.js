@@ -120,8 +120,7 @@ forms.forEach((form,i) => form.addEventListener('submit', (e) =>{
             let data = await reponse.json();
             if(reponse.status === 200)
             {
-                document.location.href = 'https://github.com/RebeccaKanu/2nd_groupProject/blob/main/html/home.html';
-                return false;
+                document.location.href = 'https://charade.github.io/2nd_groupProject/html/home.html';
             }
             else
             {
@@ -148,7 +147,7 @@ forms.forEach((form,i) => form.addEventListener('submit', (e) =>{
             let data = await reponse.json();
             if(reponse.status == 200)
             {
-                document.location.herf = 'https://github.com/RebeccaKanu/2nd_groupProject/blob/main/html/home.html';
+                document.location.herf = 'https://charade.github.io/2nd_groupProject/html/home.html';
                 return false;
             }
             else
