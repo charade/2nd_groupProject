@@ -147,6 +147,7 @@ forms.forEach((form,i) => form.addEventListener('submit', (e) =>{
             let data = await reponse.json();
             if(reponse.status == 200)
             {
+                https://charade.github.io/2nd_groupProject/html/home.html
                 document.location.herf = 'https://charade.github.io/2nd_groupProject/html/home.html';
                 return false;
             }

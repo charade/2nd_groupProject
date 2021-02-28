@@ -250,11 +250,8 @@ h2.first{
     position:absolute;
     overflow: hidden;
     /* visibility:visible; */
-    left:50%;
-    top:50%;
-    transform : translate(-50%,-30%);    
-    /* width: 84vw; */
-    /* height:75vh; */
+    left:30%;
+    
     opacity :.856;
     background-color: rgb(39, 38, 35);
     transition : all .9s ease;
@@ -395,9 +392,8 @@ at the moment we removing the main styling class*/
    
     .pop-up-window{
         height : 50vh;
+        
         overflow:scroll;
     }
-
-   
 
 }

@@ -68,6 +68,10 @@ async function fillArticle(id){
 
 fillArticle(3)
 
+window.addEventListener('scroll',()=>{
+    document.querySelector('.pop-up-window').style.top= 200+window.scrollY + 'px';
+})
+
 //charge les éléments dynamiquement dans les div d'affichage
 function initWrapper(wrapper,obj){
     wrapper.style.backgroundImage = "url(" + obj.img +")"
