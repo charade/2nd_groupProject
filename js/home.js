@@ -6,6 +6,7 @@ document.body.appendChild(popWindow);
 
 let wrapper = document.querySelectorAll('.wrapper')
 
+//charge une catégorie d'article
 async function fillArticle(id){
     let init = {
                method:'POST',
@@ -32,19 +33,26 @@ async function fillArticle(id){
         let donnee = await response.json();
         let pop_content = document.createElement('p');
         let author = document.createElement('h5');
+        //rajoute le contenu dans la fenêtre popUp... le contenu de l'article et l'auteur...
         popWindow.appendChild(pop_content);
         popWindow.appendChild(author);
         author.classList.add('author')
+        //stylise le contenu de la fenêtre popUp
         pop_content.classList.add('pop-up-content')
         if(reponse.status == 200)
         {
           for(let i = 0; i < wrapper.length; i++){
             initWrapper(wrapper[i], donnee.article[i])
             wrapper[i].firstElementChild.addEventListener('click',() =>{
+                //on rend visible la fenêtre popUp
                 popWindow.classList.remove('pop-up-window-hidden')
+                //on rajoute à la fenêtre popUp la petit effet de slide en la position au centre de l'écran
                 popWindow.classList.add('pop-up-window');
+                //on envoie la fenêtre popUp dans le viewport
                 mainContainer.classList.add('pop-up');
+                //on écrit dynamiquement le contenu de la popUp
                 pop_content.textContent = donnee.article[i].content;
+                //formate l'affichage de l'auteur
                 author.textContent = "~ "+donnee.article[i].author+" ~";
             })
           }
@@ -57,8 +65,10 @@ async function fillArticle(id){
             }
     }
 
+
 fillArticle(3)
 
+//charge les éléments dynamiquement dans les div d'affichage
 function initWrapper(wrapper,obj){
     wrapper.style.backgroundImage = "url(" + obj.img +")"
     let title = document.createElement('h2');

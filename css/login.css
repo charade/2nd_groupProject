@@ -27,10 +27,11 @@ body{
     background-color: #7f0000;
     display:flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
     height : 100vh;
     padding-left  :4rem;
     padding-right:3rem;
+    
 }
 
 body header:last-child{
@@ -171,13 +172,13 @@ form{
 }
 /*****backArrow to get back to the login face*********/
 #face-sign-up span{
-    width : 60px;
-    height:55px;
+    width : 50px;
+    height:40px;
     color:white;
     border-radius: 50%;
     background-color: black;
     box-shadow: 0 0 5px rgba(255, 255, 255, 0.404);
-    font-size:4rem;
+    font-size:3rem;
     font-weight: bolder;
     text-align: center;
     cursor:pointer;
@@ -190,8 +191,8 @@ form{
 #ombre{
     position:absolute;
     top : 92vh;
-    left: 44vw;
-    width : 500px;
+    left: 42vw;
+    width : 38vw;
     height: 20px;
     border-radius: 70%;
     background-color:rgba(0, 0, 0, 0.603);
@@ -236,6 +237,15 @@ form{
     max-height:0;
 }
 
+footer{
+    /* border: 3px solid black; */
+    margin-left : 10%;
+}
+footer img{
+    max-width : 40px;
+    margin-bottom : 20px;
+    margin-left : 20%;
+}
 /****************************************************************************************************/
 /***************************    III   **********************************************/
 h1{
@@ -263,4 +273,56 @@ h4{
     font-size : 1.8rem;
     text-decoration: underline;
     cursor:pointer;
+}
+
+@media screen and (max-width : 900px){
+    body{
+        
+        height : 98vh;
+        flex-flow : column;
+    }
+    #container{
+        height: 65%;
+        max-width : 90%;
+    }
+    h1{
+        font-size: 2.5rem;
+    }
+    #ombre{
+        left : 20vw;
+        top: 93vh;
+        width : 500px;
+    }
+    footer{
+        
+        position : absolute;
+        top:3%;
+        left:0;
+        display:flex;
+        margin : 0;
+        /* flex-direction:column; */
+        justify-content: flex-start;
+        
+    }
+    footer img{
+        max-width : 28px;
+    }
+}
+
+@media screen and (max-width : 700px){
+    
+    #container{
+        
+        /* margin-bottom : 50px; */
+        
+    }
+   
+    #ombre{
+        left : 15%;
+        top : 90%;
+        width : 75vw;
+    }
+    
+   
+    
 }

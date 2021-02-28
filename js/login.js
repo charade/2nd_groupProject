@@ -24,7 +24,7 @@ let allTextField = Array.from(document.querySelectorAll(".field"));
 let allLabels    = Array.from(document.querySelectorAll('label'));
 window.onload = ()=>{
     console.log('loaded')
-    allTextField.forEach((field,i,arr) => arr[i].value='')
+    allTextField.forEach((_,i,arr) => arr[i].value='')
 }
 /*************************Js for main login animation****************/
 
@@ -103,6 +103,7 @@ forms.forEach((form,i) => form.addEventListener('submit', (e) =>{
     let lastName = document.querySelector('#lastName')
     let email = document.querySelector('#email')
     let password = document.querySelector('#password')
+    //soit l'utilisateur se connecte(login)--> case 0 soit il s'inscrit case1
     switch(i){
         case 0 : (async function(id){
             let init = {
@@ -119,8 +120,7 @@ forms.forEach((form,i) => form.addEventListener('submit', (e) =>{
             let data = await reponse.json();
             if(reponse.status === 200)
             {
-                console.log('ok')
-                document.location.href = 'http://127.0.0.1:5500/html/home.html';
+                document.location.href = 'https://github.com/RebeccaKanu/2nd_groupProject/blob/main/html/home.html';
                 return false;
             }
             else

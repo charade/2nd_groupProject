@@ -1,6 +1,8 @@
 html{
     font-family: "Open sans-serif";
     font-size: 62.5%;
+    
+
     /* border: 3px solid black;  */
 }
 
@@ -27,6 +29,7 @@ body > header{
 /***Social media********************************/
 /******first block ===> media icons***/
 .media{
+    
     width : 100%;
     display:flex;
     justify-content: space-between;
@@ -36,13 +39,6 @@ body > header{
 .media .icons{
     flex:1;
     width:20%;
-}
-
-#logo{
-    margin-right : 2%;
-    border-radius: 50%;
-    max-width: 25px;
-    vertical-align: -.1cm;
 }
 
 .media .icons img{
@@ -123,25 +119,8 @@ nav ul {
     object-fit: contain;
 } */
 
-#favoris{
-    width: 40px;
-    height: 30px;
-    position: relative;
-}
 
-#favoris img {
-    position: absolute;
-    height: 20px;
-    width: 20px;
-    filter: drop-shadow(1px 1px 0 black)
-    drop-shadow(-1px -1px 0 black);
-}
 
-#favoris img:first-child{
-    left: 13px;
-    top: 6px;
-    right: 15px;
-}
 
 #logo img:first-child{
     filter: drop-shadow(1px 1px 0 black) 
@@ -309,6 +288,7 @@ at the moment we removing the main styling class*/
      
      float:right;
      max-width : 37px;
+     
      /* margin-left : 90%; */
      /* margin-top : 1%; */
      margin-bottom : 50px;
@@ -377,3 +357,47 @@ at the moment we removing the main styling class*/
     display:none;
 } */
 
+@media screen and (max-width : 900px){
+  
+    .madia{
+        position:absolute;
+        top:0;
+    }
+    
+    nav{
+        margin:2%;
+        width:97%;
+        height : 25vh;
+        overflow: scroll;
+    }
+
+    .media ul li a{
+        font-size: 1.2rem;
+    }
+
+    nav ul{
+        flex-direction: column;
+    }
+
+    nav ul li{
+        margin-bottom: 7%;
+    }
+    nav ul li a {
+        font-size: 1.5rem;
+    }
+    .main-container{
+        flex-direction: column;
+        height:100vh;
+    }
+    .main-container section{
+        width : 100%;
+    }
+   
+    .pop-up-window{
+        height : 50vh;
+        overflow:scroll;
+    }
+
+   
+
+}
